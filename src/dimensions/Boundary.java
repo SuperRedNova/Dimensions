@@ -9,9 +9,10 @@ import java.util.*;
 public class Boundary {
 
 	private Set<Boundary> Boundaries;
-	private Map<String,Float> Dimensions = new HashMap<String,Float>(); 
+	private Map<String,Float> Dimensions = new HashMap<String,Float>();
+	private boolean inverse = false;
 	
-	public int numberDimensions(){
+	public int size(){
 		return Dimensions.size();
 	}
 	
@@ -29,8 +30,6 @@ public class Boundary {
 	}
 	
 	public void setBoundary(Boundary boundary){
-		if(boundary.numberDimensions()<this.numberDimensions()){
-			Boundaries.add(boundary);
-		}
+		Boundaries.add(boundary);
 	}
 }
